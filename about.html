@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us</title>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+
+ /* Navigation */
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --primary-color: hsl(25, 40%, 35%);
+    --primary-dark: hsl(25, 40%, 25%);
+    --text-color: #333;
+    --text-light: #666;
+    --background-light: #f8f8f8;
+    --white: #ffffff;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-800: #1f2937;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.navbar {
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar .container-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    height: 100%;
+}
+
+.logo img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+}
+
+.a{
+    border-bottom: 3px solid var(--text-color);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+/* About Section */
+
+h2{
+    text-align: center;
+}
+
+.about-section {
+    padding: 5rem 1rem;
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-text{
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 40px;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.about-card {
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: 0.5s;
+}
+
+.about-card p{
+    line-height: 2;
+}
+
+.about-card:hover {
+    transform: translateX(-10px);
+}
+
+.about-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+
+.footer {
+    background-color: var(--gray-800);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.footer-section p {
+    padding: 0 1rem;
+    color: var(--gray-200);
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    padding: 0 1rem;
+    color: var(--gray-200);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a:hover {
+    color: var(--white);
+}
+
+.footer-section i {
+    margin-right: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-200);
+    color: var(--gray-200);
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color:var(--text-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1rem;
+        box-shadow: var(--shadow);
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-links a {
+        margin: 0.5rem 0;
+        padding: 0.5rem 1rem;
+    }
+    
+    .about-content{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+}
+
+    </style>
+    </head>
+    <body>
+
+        <!-- Navigation -->
+        
+        <nav class="navbar">
+            <div class="container-1">
+                <div class="logo"><img src="img/Shamalogo3.png" alt=""></div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a class="a" href="about.html">About</a>
+                    <a href="product.html">Products</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- About Section -->
+    
+        <section id="about" class="about-section">
+        <div class="container-1">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://stanindia.com/wp-content/uploads/2021/11/leather-moving.jpg" alt="Modern tannery facility">
+                </div>
+                <div class="about-text">
+                    <p>Founded in 1998, Shama Leathers is based in Ambur, India, a city renowned for its rich leather craftsmanship. With over 25 years of expertise, we have honed our processes to deliver premium leather solutions that meet international standards.</p>
+                    <p>Our state-of-the-art facility is equipped with advanced machinery, and we adhere to strict quality control measures to ensure superior output.</p>
+                </div>
+            </div>
+            <div class="about-cards">
+                <div class="about-card">
+                    <h3>Decades of Expertise</h3>
+                    <p>With over 25 years of hands-on experience in the leather industry, we have honed our expertise in leather processing, 
+                       manufacturing, and supply. Our deep knowledge spans from rawhide selection to the final finishing touches, ensuring 
+                       premium quality at every stage. Over the decades, we have built strong relationships with trusted suppliers and customers 
+                       worldwide, consistently delivering high-quality leather products tailored to various industries, including fashion, 
+                       upholstery, automotive, and accessories. Our commitment to craftsmanship, sustainability, and innovation has made us 
+                       a reliable partner in the leather business.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Premium Quality</h3>
+                    <p>Our commitment to excellence begins with the careful selection of the finest raw materials, ensuring durability, 
+                       texture, and aesthetic appeal. Every piece of leather undergoes a stringent quality control process at multiple stages 
+                       of production. From sourcing premium hides to the final finishing touches, we adhere to strict industry standards to 
+                       guarantee consistency, strength, and longevity. Our expert craftsmen meticulously inspect each batch for imperfections, 
+                       ensuring that only the highest quality leather reaches our customers. With a focus on precision, sustainability, and 
+                       superior craftsmanship, we deliver leather products that meet the highest expectations across various industries.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Sustainable Practices</h3>
+                    <p>We are committed to environmentally responsible leather production by implementing eco-conscious tanning methods that 
+                       minimize our ecological footprint. Our processes prioritize the use of biodegradable and non-toxic tanning agents, 
+                       reducing the reliance on harmful chemicals such as chromium. We also adopt water-efficient techniques, recycling and 
+                       purifying water used in the tanning process to prevent pollution. Additionally, our waste management strategy ensures 
+                       that leather scraps and by-products are repurposed or recycled, further reducing environmental impact. By embracing 
+                       sustainable sourcing, ethical manufacturing, and innovative green technologies, we ensure that our leather products 
+                       are not only of premium quality but also produced with respect for nature and future generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <!-- <div class="footerlogo"><img src="img/Shamalogo3.png" alt=""></div> -->
+                    <h3>Shama Leathers</h3>
+                    <p>Premium leather solutions since 1998. Quality craftsmanship for footwear, furniture, and fashion industries.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 4/21, Mottukullai West Street, Ambur - 635802, India</p>
+                    <p><i class="fas fa-envelope"></i> ceo@shamaleathers.com</p>
+                    <p><i class="fas fa-envelope"></i> shamaleathers@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="product.html">Products & Services</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="index.html#contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shama Leathers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+// Mobile Navigation Toggle
+
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Update footer year automatically
+document.getElementById('year').textContent = new Date().getFullYear();
+  
+
+// Mobile menu toggle
+document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+ document.querySelector('.nav-links').classList.toggle('active');
+});
+
+    </script>
+</body>
+</html>
