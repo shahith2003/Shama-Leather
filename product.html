@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+ /* Navigation */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --primary-color: hsl(25, 40%, 35%);
+    --primary-dark: hsl(25, 40%, 25%);
+    --text-color: #333;
+    --text-light: #666;
+    --background-light: #f8f8f8;
+    --white: #ffffff;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-800: #1f2937;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.navbar {
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    /* border: 1px solid; */
+    z-index: 999;
+}
+
+.navbar .container-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    /* border: 1px solid; */
+}
+
+.logo {
+    /* border: 1px solid; */
+    height: 100%;
+}
+
+.logo img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+/* Products Section */
+.products {
+    padding: 5rem 1rem;
+    background-color: var(--gray-100);
+}
+
+.products h2, .products h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h4 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 1.25rem;
+}
+
+.product-card p {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--text-light);
+}
+
+/* Industry Section */
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.industry-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+.industry-card h4 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.industry-card ul {
+    list-style: none;
+}
+
+.industry-card li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+}
+
+.industry-card li::before {
+    content: "•";
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Process Section */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.process-card {
+    background: var(--white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.process-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.process-card h4 {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.process-card p {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.process-card h5 {
+    padding: 0 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.process-card ul {
+    padding: 0 1rem;
+    list-style: none;
+}
+
+.process-card li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+}
+
+.process-card li::before {
+    content: "•";
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--gray-800);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.footer-section p {
+    padding: 0 1rem;
+    color: var(--gray-200);
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    padding: 0 1rem;
+    color: var(--gray-200);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a:hover {
+    color: var(--white);
+}
+
+.footer-section i {
+    margin-right: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-200);
+    color: var(--gray-200);
+}
+
+@media (max-width: 768px) {
+
+.mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links a {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+}
+}
+    </style>
+</head>
+<body>
+    <!-- Products Section -->
+    <nav class="navbar">
+        <div class="container-1">
+            <div class="logo"><img src="img/Shamalogo3.png" alt=""></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="">Products</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <section id="products" class="products">
+        <div class="container-1">
+            <h2>Our Products</h2>
+            
+            <!-- Leather Types -->
+            <h3>Types of Leather</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="img/suede-leather.jpg" alt="Full-Grain Leather">
+                    <h4>Full-Grain Leather</h4>
+                    <p>Our premium quality leather that retains the natural grain pattern. Known for its durability, strength, and unique texture.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1473188588951-666fce8e7c68" alt="Top-Grain Leather">
+                    <h4>Top-Grain Leather</h4>
+                    <p>Sanded and refined leather with a more uniform appearance. Excellent for luxury items requiring a consistent finish.</p>
+                </div>
+                <div class="product-card">
+                    <img src="img/suede-leather2.jpg" alt="Suede Leather">
+                    <h4>Suede Leather</h4>
+                    <p>Soft, velvety leather with a napped finish. Ideal for fashion items and upholstery where elegance is paramount.</p>
+                </div>
+            </div>
+            
+            <!-- Leather Sources -->
+            <h3>Sources of Leather</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="img/cow leather.jpg" alt="Cow Leather">
+                    <h4>Cow Leather</h4>
+                    <p>Sturdy and versatile, perfect for heavy-duty applications. Ideal for footwear, furniture, and industrial use.</p>
+                </div>
+                <div class="product-card">
+                    <img src="img/sheepleather.jpg" alt="Sheep Leather">
+                    <h4>Sheep Leather</h4>
+                    <p>Naturally soft and flexible, offering excellent comfort. Commonly used in garments and accessories.</p>
+                </div>
+                <div class="product-card">
+                    <img src="img/goatleather.jpg" alt="Goat Leather">
+                    <h4>Goat Leather</h4>
+                    <p>Known for its strength and durability despite being lightweight. Perfect for luxury goods.</p>
+                </div>
+            </div>
+            
+            <!-- Industries -->
+            <h3>Industries We Serve</h3>
+            <div class="industry-grid">
+                <div class="industry-card">
+                    <h4>Footwear Industry</h4>
+                    <ul>
+                        <li>Premium leather for shoe uppers</li>
+                        <li>Durable sole materials</li>
+                        <li>Quality leather linings</li>
+                        <li>Water-resistant leather options</li>
+                        <li>Specialty leather for sport footwear</li>
+                    </ul>
+                </div>
+                <div class="industry-card">
+                    <h4>Furniture Industry</h4>
+                    <ul>
+                        <li>Upholstery leather</li>
+                        <li>Decorative leather elements</li>
+                        <li>Heavy-duty leather for commercial use</li>
+                        <li>Stain-resistant finishes</li>
+                        <li>Custom-colored leather options</li>
+                    </ul>
+                </div>
+                <div class="industry-card">
+                    <h4>Fashion Industry</h4>
+                    <ul>
+                        <li>Leather for handbags and accessories</li>
+                        <li>Garment-grade leather</li>
+                        <li>Belt and small goods materials</li>
+                        <li>Specialty finishes for designer items</li>
+                        <li>Embossed and textured leather</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Processing Methods -->
+            <h3>Our Processing Methods</h3>
+            <div class="process-grid">
+                <div class="process-card">
+                    <img src="img/tanning.jpg" alt="">
+                    <h4>Vegetable Tanning</h4>
+                    <p>A traditional, eco-friendly process using natural tannins from tree bark and other plant sources.</p>
+                    <h5>Benefits:</h5>
+                    <ul>
+                        <li>Environmentally sustainable</li>
+                        <li>Natural aging characteristics</li>
+                        <li>Biodegradable</li>
+                        <li>Unique color variations</li>
+                        <li>Traditional craftsmanship</li>
+                    </ul>
+                </div>
+                <div class="process-card">
+                    <img src="img/chrometanning.jpg" alt="">
+                    <h4>Chrome Tanning</h4>
+                    <p>A modern tanning method using chromium salts, delivering consistent results and excellent physical properties.</p>
+                    <h5>Benefits:</h5>
+                    <ul>
+                        <li>Consistent quality</li>
+                        <li>Superior water resistance</li>
+                        <li>Faster production time</li>
+                        <li>Wide range of colors</li>
+                        <li>Enhanced durability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <!-- <div class="footerlogo"><img src="img/Shamalogo3.png" alt=""></div> -->
+                    <h3>Shama Leathers</h3>
+                    <p>Premium leather solutions since 1998. Quality craftsmanship for footwear, furniture, and fashion industries.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 4/21, Mottukullai West Street, Ambur - 635802, India</p>
+                    <p><i class="fas fa-envelope"></i> ceo@shamaleathers.com</p>
+                    <p><i class="fas fa-envelope"></i> shamaleathers@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="index.html#contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shama Leathers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+        });
+
+        // Update footer year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+          
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+         document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+    </script>
+</body>
+</html>
